@@ -1,9 +1,18 @@
 *.iml
 .idea
-lib/q.js
-lib/require.js
-lib/superagent.js
-lib/underscore.js
+.jshintrc
+.travis.yml
+Gruntfile.js
+vendor/q.js
+vendor/require.js
+vendor/superagent.js
+vendor/underscore.js
+vendor/traverse.js
+vendor/chai.js
+vendor/mocha.js
+vendor/mocha.css
 index.html
+interactive.html
 example
+test
 

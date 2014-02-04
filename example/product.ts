@@ -1,35 +1,41 @@
 /// <reference path="misc/dimension.ts"/>
 
-enum Origin { Local, Imported }
+enum Origin {
+    Local, // From here
+    Imported // From elsewhere
+}
 
 interface Product {
-    /** Uniquely defines the product
+    /**
+     * Uniquely defines the product
      * @pattern [A-Z][a-z][0-9]_
      */
-        name: string;
+    name: string;
 
     /** How big it is */
-        dimension?: Dimension;
+    dimension?: Dimension;
 
     /** Classification */
-        category: Category;
-        
+    category: Category;
+
     /** Where is it from? */
-		origin: Origin;
+    origin: Origin;
 }
 
 interface WeightedProduct extends Product {
-		weight: number;
+    weight: number;
 }
 
 interface Category {
     /** Uniquely identifies the category */
-        name: string;
+    name: string;
 
-    /** Classification level from 1 to 5 (highest) */
-        level: number;
+    /** Classification level from 1 to 5 (highest)
+     * @type integer */
+    level: number;
 }
 
 interface CategoryIndex {
     categories: { [key: string]: Category };
+    products: { [key: string]: Product[] };
 }
